@@ -1,0 +1,14 @@
+<app-datepicker
+  [resetDate]="tableVisible"
+  (newDateEvent)="getDay($event)"
+></app-datepicker>
+<button
+  class="close"
+  *ngIf="tableVisible && tableData.length"
+  mat-raised-button
+  (click)="closeTable()"
+  color="warn"
+>
+  Close Table
+</button>
+<app-table *ngIf="tableVisible" [tableData]="tableData"></app-table>
